@@ -48,8 +48,27 @@ This is a simple Node.js backend service built with Express.js that allows authe
 
    Purpose: Upload a file with title and description.
    Middleware used: upload.single('file') – expects a single file with the form field name "file".
+   
+### Request
+- **Method:** `POST`
+- **Content-Type:** `multipart/form-data`
+- **Body Parameters:**
+  - `file` (File) — The file to be uploaded (field name: `file`)
+  - `title` (String) — Title of the file
+  - `description` (String) — Description of the file
 
-   ### Request
+### Headers
+- Requires authentication (assumes `req.userId` is available via middleware)
+
+### Response
+1. POST API:
+   ```bash
+   Endpoint: POST /
+
+   Purpose: Upload a file with title and description.
+   Middleware used: upload.single('file') – expects a single file with the form field name "file".
+   
+### Request
 - **Method:** `POST`
 - **Content-Type:** `multipart/form-data`
 - **Body Parameters:**
@@ -62,19 +81,17 @@ This is a simple Node.js backend service built with Express.js that allows authe
 
 ### Response
 
-```json
 {
   "id": "file-uuid",
   "status": "uploaded"
 }
 
-
-1. GET API:
+2. GET API:
    ```bash
    Endpoint: GET /:id/
    Purpose: Retrieve details about a previously uploaded file by its ID.
 
-   ### Request
+### Request
 - **Method:** `GET`
 - **URL Parameter:** :id — ID of the file (UUID)
 
@@ -84,7 +101,6 @@ This is a simple Node.js backend service built with Express.js that allows authe
 
 ### Response
 
-```json
 {
   "id": "file-uuid",
   "filename": "generated-filename",
