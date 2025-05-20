@@ -42,7 +42,8 @@ This is a simple Node.js backend service built with Express.js that allows authe
 
 ## API endpoints
 
-1. POST API:
+### 1: POST API:
+
 ### Endpoint: `/`
 
 ### Request
@@ -62,7 +63,8 @@ This is a simple Node.js backend service built with Express.js that allows authe
   "status": "uploaded"
 }
 
-2. GET API:
+### 2:  GET API:
+
 ### Endpoint: `/:id`
 
 ### Request
@@ -75,7 +77,7 @@ This is a simple Node.js backend service built with Express.js that allows authe
 - Requires authentication (assumes req.userId is available via middleware)
 
 ### Response
-
+```json
 {
   "id": "file-uuid",
   "filename": "generated-filename",
