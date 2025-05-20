@@ -43,12 +43,8 @@ This is a simple Node.js backend service built with Express.js that allows authe
 ## API endpoints
 
 1. POST API:
-   ```bash
-   Endpoint: POST /
+### Endpoint: `/`
 
-   Purpose: Upload a file with title and description.
-   Middleware used: upload.single('file') – expects a single file with the form field name "file".
-   
 ### Request
 - **Method:** `POST`
 - **Content-Type:** `multipart/form-data`
@@ -56,28 +52,8 @@ This is a simple Node.js backend service built with Express.js that allows authe
   - `file` (File) — The file to be uploaded (field name: `file`)
   - `title` (String) — Title of the file
   - `description` (String) — Description of the file
-
-### Headers
-- Requires authentication (assumes `req.userId` is available via middleware)
-
-### Response
-1. POST API:
-   ```bash
-   Endpoint: POST /
-
-   Purpose: Upload a file with title and description.
-   Middleware used: upload.single('file') – expects a single file with the form field name "file".
-   
-### Request
-- **Method:** `POST`
-- **Content-Type:** `multipart/form-data`
-- **Body Parameters:**
-  - `file` (File) — The file to be uploaded (field name: `file`)
-  - `title` (String) — Title of the file
-  - `description` (String) — Description of the file
-
-### Headers
-- Requires authentication (assumes `req.userId` is available via middleware)
+  - **Headers:**  `Requires authentication (assumes `req.userId` is available via middleware)`
+- **Purpose:** `Upload a file with title and description`
 
 ### Response
 
@@ -87,13 +63,12 @@ This is a simple Node.js backend service built with Express.js that allows authe
 }
 
 2. GET API:
-   ```bash
-   Endpoint: GET /:id/
-   Purpose: Retrieve details about a previously uploaded file by its ID.
+### Endpoint: `/:id`
 
 ### Request
 - **Method:** `GET`
-- **URL Parameter:** :id — ID of the file (UUID)
+- **URL Parameter:**  `:id — ID of the file (UUID)`
+-**Purpose:**  `Retrieve details about a previously uploaded file by its ID.`
 
 
 ### Headers
